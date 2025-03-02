@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -5,18 +6,96 @@
 Bird is the word
     </title>
     <style>
-:root {
+:root{
+    --primary-color: rgb(177,240,247);
+    --secondary-color: rgb(188, 204, 220);
+    --bg-color: rgb(129,191,218);
+    --font-color: rgb(0,0,0);
+    --heading-color: rgb(250,218,122);
+    }
+    .dark{
+    --primary-color: rgb(0, 101, 112);
+    --secondary-color: rgb(1, 37, 73);
+    --bg-color: rgb(1, 41, 58);
+    --font-color: rgb(255, 255, 255);
+    --heading-color: rgb(167, 141, 65);
+}
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+background-color: var(--bg-color);
+color: var(--font-color);
+}
+h1{
+    color: var(--heading-color);
+}
+button{
+    background-color: var(--primary-color);
+    color: var(--font-color);
+}
+div{
+    padding-top: 10px;
+    margin-left: 20%;
 }
     </style>
 </head>
 <body>
-    <img id="Pardalote" src="http://www.outgrabe.net/bird00.jpg	" alt="Pardalote">
+    <img id="image" src="http://www.outgrabe.net/bird00.jpg	" alt="Pardalote">
 <main>
-<p id="Pardalote"> Pardalote by fir0002 (CC-by-NC)</p>
-<button></button>
+
+    <p id="text"> Pardalote by fir0002 (CC-by-NC)</p>
+
+<button type=" button" id="1" onclick="change_image(1)">Pardalote</button>
+<button type=" button" id="2" onclick="change_image(2)">Purple Swamp Hen</button>
+<button type=" button" id="3" onclick="change_image(3)">White-headed Stilt</button>
+<button type=" button" id="4" onclick="change_image(4)">Inland Thornbill</button>
+<button type=" button" id="5" onclick="change_image(5)">Rose Robin</button>
+
+<div >
+    <button id="light" onclick="setTheme('dark')"> Dark mode</button>
+    <button id="dark" onclick="setTheme('light')"> Light mode</button>
+</div>
 </main>
+
 <script>
+function change_image(button){
+    var i=button;
+    if(i==1){ 
+        var img= document.getElementById('image');
+    img.src="http://www.outgrabe.net/bird00.jpg";
+    img.alt="Pardalote";
+    var p = document.getElementById('text').innerHTML = 'Pardalote by fir0002 (CC-by-NC)';
+}
+if(i==2){ 
+        var img= document.getElementById('image');
+    img.src="http://www.outgrabe.net/bird01.jpg";
+    img. alt= "Purple Swamp Hen";
+    var p = document.getElementById('text').innerHTML = 'Purple swamp hen by Toby Hudson (CC-by-SA)';
+}
+if(i==3){ 
+        var img= document.getElementById('image');
+    img.src="http://www.outgrabe.net/bird02.jpg";
+    img.alt="White-headed Stilt";
+    var p = document.getElementById('text').innerHTML = 'White-headed Stilt by JJ Harrison (CC-by-SA)';
+}
+if(i==4){ 
+        var img= document.getElementById('image');
+    img.src="http://www.outgrabe.net/bird03.jpg";
+    img.alt="Inland Thornbill";
+    var p = document.getElementById('text').innerHTML = 'Inland Thornbill by Peter Jacobs (CC-by-SA)';
+}
+if(i==5){ 
+        var img= document.getElementById('image');
+    img.src="http://www.outgrabe.net/bird04.jpg";
+    img.alt="Rose Robin";
+    var p = document.getElementById('text').innerHTML = 'Rose Robin by JJ Harrison (CC-by-SA)';
+}
+}
+const setTheme = theme => document.documentElement.className = theme;
 
 </script>
 </body>
